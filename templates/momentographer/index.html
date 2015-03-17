@@ -1,0 +1,28 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}
+    Momentographer :: Pruthvi Desai
+{% endblock %}
+
+{% block header %}
+<div align="center">
+    <h1 class="heading"><a href="../">Pruthvi<span class="desai"> Desai </span></a></h1>
+    <h4><a href="../dreamer">Dreamer.</a> <a href="../creator">Creator.</a> <a class="current" href="../momentographer">Momentographer.</a></h4>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="blog_body" align="center">
+        {% for image in images %}
+            <header>
+                <h4 class="blog_slug">{{image.title}}</h4>
+            </header>
+            <div>
+                <img id="momentographer_image" src="{{image.image.url}}" alt="{{image.title}}" />
+            </div>
+            <div class="momentographer_content">
+                {{image.description|safe}}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}
+    {{ about.page }}
+{% endblock %}
+
+{% block header %}
+<div align="center">
+    <h1 class="heading"><a href="../">Pruthvi<span class="desai"> Desai </span></a></h1>
+    <h4><a href="../../dreamer">Dreamer.</a> <a href="../../creator">Creator.</a> <a href="../../momentographer">Momentographer.</a></h4>
+</div>
+{% endblock %}
+
+{% block page %}
+<h4 class="blog_title">
+    <a href="../about">
+        {{ about.page }}
+    </a>
+</h4>
+{% endblock %}
+
+{% block content %}
+<article>
+    <header align="center"></header>
+    <p class="context" align="center">
+        {{ about.context|safe }}
+    </p>
+</article>
+{% endblock %}

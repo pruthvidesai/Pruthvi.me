@@ -1,0 +1,27 @@
+﻿{% extends 'base.html' %}
+
+{% block header %}
+<div align="center">
+    <h1 class="heading"><a href="../">Pruthvi<span class="desai"> Desai </span></a></h1>
+    <h4><a href="../dreamer">Dreamer.</a> <a class="current" href="../creator">Creator.</a> <a href="../momentographer">Momentographer.</a></h4>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="blog_body" align="center">
+        {% for created in creations %}
+            <h4 class="head">
+                {% if created.external == True %} 
+                    <a href="{{created.website}}" target="_blank">
+                {% else %}
+                    <a href="{{created.website}}">
+                {% endif %}
+                        {{created.title}}
+                    </a>
+            </h4>
+            <div class="creator">
+                {{created.content|safe}}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

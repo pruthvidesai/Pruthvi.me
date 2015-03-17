@@ -1,0 +1,41 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.title }} :: Pruthvi Desai
+{% endblock %}
+
+{% block header %}
+<div align="center">
+    <h1 class="heading"><a href="../">Pruthvi<span class="desai"> Desai </span></a></h1>
+    <h4><a href="../../dreamer">Dreamer.</a> <a href="../../creator">Creator.</a> <a href="../../momentographer">Momentographer.</a></h4>
+</div>
+{% endblock %}
+
+{% block page %}
+    <h4 class="blog_title">
+        <a href="../">
+            Happenings
+        </a>
+    </h4>
+{% endblock %}
+
+{% block content %}
+    <div class="blog_body" align="center">
+        <header>
+            <h4 class="blog_slug">{{post.title}}</h4>
+        </header>
+        {% if post.image != "NULL" %}
+        <div>
+            <img id="happenings_image" src="{{post.image.url}}" alt="{{post.title}}" />
+        </div>
+        {% endif %}
+        <h4 class="date">
+            <time>
+                {{post.created|date}}
+            </time>
+        </h4>
+        <div class="blog_content">
+            {{post.content|safe}}
+        </div>
+    </div>
+{% endblock %}
