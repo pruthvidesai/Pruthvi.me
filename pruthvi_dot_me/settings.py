@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'pruthvi_dot_me.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pruthvi_me_db',
+        'NAME': 'd4kcagq1kcj9fs',
         'USER': 'qtfxlfrryxjmpn',
         'PASSWORD': '9qUjcxJ0BFC-rm6QEhDYS6RaWF',
         'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
