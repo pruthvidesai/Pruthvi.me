@@ -72,10 +72,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pruthvi_me_db',
-        'USER': 'postgres',
-        'PASSWORD': 'toor',
-        'HOST': 'localhost',
-        'PORT': '8080',
+        'USER': 'qtfxlfrryxjmpn',
+        'PASSWORD': '9qUjcxJ0BFC-rm6QEhDYS6RaWF',
+        'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
