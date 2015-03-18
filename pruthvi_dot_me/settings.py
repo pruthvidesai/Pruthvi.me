@@ -70,11 +70,12 @@ WSGI_APPLICATION = 'pruthvi_dot_me.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pruthvi_me_db',
-        'USER': 'root',
-        'PASSWORD': 'hitubhai45',
-        'HOST': '',
+        'USER': 'postgres',
+        'PASSWORD': 'toor',
+        'HOST': 'localhost',
+        'PORT': '8080',
     }
 }
 
