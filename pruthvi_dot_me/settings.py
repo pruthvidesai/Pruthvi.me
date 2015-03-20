@@ -27,9 +27,9 @@ CONTENT_TYPES = ['application/pdf', 'image/jpeg', 'image/gif']
 SECRET_KEY = 'uf01=nde^#r6h66nlhxwck1d_j5nj46+f$vu*=peuguz9&v%b&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'pruthvi_dot_me.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-local = False
+local = True
 if not local:
     DATABASES = {
         'default': {
