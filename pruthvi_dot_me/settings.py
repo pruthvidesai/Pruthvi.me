@@ -113,6 +113,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     )
 
-if local:
+if not local:
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
