@@ -31,7 +31,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.pruthvi.me']
 
 
 # Application definition
