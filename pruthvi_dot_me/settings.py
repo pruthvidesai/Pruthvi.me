@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'pruthvi_dot_me.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-local = True
+local = False
 if not local:
     DATABASES = {
         'default': {
