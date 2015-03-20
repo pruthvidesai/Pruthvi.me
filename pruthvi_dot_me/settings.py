@@ -67,17 +67,29 @@ WSGI_APPLICATION = 'pruthvi_dot_me.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd4kcagq1kcj9fs',
-        'USER': 'qtfxlfrryxjmpn',
-        'PASSWORD': '9qUjcxJ0BFC-rm6QEhDYS6RaWF',
-        'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+local = False
+if not local:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd4kcagq1kcj9fs',
+            'USER': 'qtfxlfrryxjmpn',
+            'PASSWORD': '9qUjcxJ0BFC-rm6QEhDYS6RaWF',
+            'HOST': 'ec2-54-221-249-3.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
 }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'pruthvi_me_db',
+            'USER': 'postgres',
+            'PASSWORD': 'toor',
+            'HOST': 'localhost',
+            'PORT': '8080',
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -101,5 +113,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     )
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+if local:
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.config()
