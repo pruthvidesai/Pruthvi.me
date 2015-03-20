@@ -31,7 +31,7 @@ DEBUG = False
 
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['www.pruthvi.me']
+ALLOWED_HOSTS = ['pruthvi-me.herokuapp.com']
 
 
 # Application definition
