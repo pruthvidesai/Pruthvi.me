@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^creator/', include('creator.urls')),
     url(r'^momentographer/', include('momentographer.urls')),
     url(r'^happenings/', include('happenings.urls')),
-    #url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 
 
     #below static line is very important for media files, and has to be here: main url

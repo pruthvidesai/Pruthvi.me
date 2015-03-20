@@ -27,11 +27,11 @@ CONTENT_TYPES = ['application/pdf', 'image/jpeg', 'image/gif']
 SECRET_KEY = 'uf01=nde^#r6h66nlhxwck1d_j5nj46+f$vu*=peuguz9&v%b&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['http://pruthvi-me.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
