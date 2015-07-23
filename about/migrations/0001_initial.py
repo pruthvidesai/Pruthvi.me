@@ -17,8 +17,5 @@ class Migration(migrations.Migration):
                 ('page', models.CharField(max_length=255)),
                 ('context', models.TextField()),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
     ]

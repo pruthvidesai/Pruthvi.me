@@ -20,8 +20,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                'ordering': ['-created'],
+                'ordering': ['created'],
             },
-            bases=(models.Model,),
         ),
     ]

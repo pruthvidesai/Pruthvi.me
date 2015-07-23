@@ -6,4 +6,5 @@ class Dreamer(models.Model):
     content = models.TextField()
 
     def __unicode__(self):
-        return self.page
+	    return self.page
+

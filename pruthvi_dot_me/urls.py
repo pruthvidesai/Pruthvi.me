@@ -1,25 +1,35 @@
-from django.conf.urls import patterns, include, url
-from django.conf import settings
-from django.conf.urls.static import static
+"""pruthvi_dot_me URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.8/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Add an import:  from blog import urls as blog_urls
+    2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
+"""
+#1.8 might not require patterns from conf.urls
+
+from django.conf.urls import include, url
 from django.contrib import admin
-from django.http import HttpResponse
+
 from django.views.generic.base import TemplateView
+from django.conf.urls.static import static
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'pruthvi_dot_me.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+from django.conf import settings
 
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^robots.txt', TemplateView.as_view(template_name='robots.txt')),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^about/', include('about.urls')),
-    url(r'^dreamer/', include('dreamer.urls')),
     url(r'^creator/', include('creator.urls')),
-    url(r'^momentographer/', include('momentographer.urls')),
+    url(r'^dreamer/', include('dreamer.urls')),
     url(r'^happenings/', include('happenings.urls')),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-
-
-    #below static line is very important for media files, and has to be here: main url
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^momentographer/', include('momentographer.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

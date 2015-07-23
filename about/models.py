@@ -6,4 +6,4 @@ class About(models.Model):
     context = models.TextField()
 
     def __unicode__(self):
-        return self.page
+	return self.page

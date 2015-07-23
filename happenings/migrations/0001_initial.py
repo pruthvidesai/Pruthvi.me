@@ -17,11 +17,12 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255)),
                 ('slug', models.SlugField(unique=True, max_length=255)),
                 ('content', models.TextField()),
+                ('image', models.FileField(default=b'NULL', upload_to=b'')),
+                ('published', models.BooleanField(default=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
             ],
             options={
                 'ordering': ['-created'],
             },
-            bases=(models.Model,),
         ),
     ]

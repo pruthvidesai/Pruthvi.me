@@ -15,13 +15,14 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=255)),
-                ('website', models.TextField(max_length=255)),
+                ('website', models.CharField(max_length=255)),
                 ('content', models.TextField()),
+                ('published', models.BooleanField(default=True)),
+                ('external', models.BooleanField(default=False)),
                 ('created', models.DateTimeField(auto_now_add=True)),
             ],
             options={
                 'ordering': ['-created'],
             },
-            bases=(models.Model,),
         ),
     ]
