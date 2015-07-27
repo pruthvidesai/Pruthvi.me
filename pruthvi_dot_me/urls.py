@@ -23,6 +23,9 @@ from django.conf.urls.static import static
 
 from django.conf import settings
 
+from django.conf.urls import handler404, handler500
+from django.conf.urls import handler400, handler403
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
@@ -33,3 +36,8 @@ urlpatterns = [
     url(r'^happenings/', include('happenings.urls')),
     url(r'^momentographer/', include('momentographer.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler400 = 'pruthvi_dot_me.views.error400'
+handler403 = 'pruthvi_dot_me.views.error403'
+handler404 = 'pruthvi_dot_me.views.error404'
+handler500 = 'pruthvi_dot_me.views.error500'
