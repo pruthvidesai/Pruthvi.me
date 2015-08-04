@@ -30,7 +30,7 @@ def deploy(directory="pruthvi_dot_me"):
         if directory is not None:
             run("rm -rf %s" % directory)
         # force clone
-        run("git clone https://github.com/pruthvidesai/Pruthvi.me.git %s" % directory)
+        run("git clone --branch digital_ocean_site https://github.com/pruthvidesai/Pruthvi.me.git %s" % directory)
         # restart nginx and gunicorn
         run("service gunicorn restart")
         run("service nginx restart")
